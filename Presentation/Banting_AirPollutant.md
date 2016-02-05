@@ -28,98 +28,24 @@ Source of the data is obtained from http://data.gov.my/view.php?view=280
 
 However, the measured API is only available from August 2013 and February 2015.
 
-Location of API Reading Taken
+Sample of Data
 ========================================================
 
-<!-- Map generated in R 3.2.3 by googleVis 0.5.10 package -->
-<!-- Fri Feb 05 15:11:49 2016 -->
 
+```r
+banting<-read.csv("API_Banting.csv")
+head(banting)
+```
 
-<!-- jsHeader -->
-<script type="text/javascript">
- 
-// jsData 
-function gvisDataMapIDe1820bf321d () {
-var data = new google.visualization.DataTable();
-var datajson =
-[
- [
- "2.832833, 101.499588",
-"Banting, Selangor" 
-] 
-];
-data.addColumn('string','loc');
-data.addColumn('string','tip');
-data.addRows(datajson);
-return(data);
-}
- 
-// jsDrawChart
-function drawChartMapIDe1820bf321d() {
-var data = gvisDataMapIDe1820bf321d();
-var options = {};
-options["showTip"] = true;
-options["mapType"] = "normal";
-options["enableScrollWheel"] = true;
-
-    var chart = new google.visualization.Map(
-    document.getElementById('MapIDe1820bf321d')
-    );
-    chart.draw(data,options);
-    
-
-}
-  
- 
-// jsDisplayChart
-(function() {
-var pkgs = window.__gvisPackages = window.__gvisPackages || [];
-var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
-var chartid = "map";
-  
-// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
-var i, newPackage = true;
-for (i = 0; newPackage && i < pkgs.length; i++) {
-if (pkgs[i] === chartid)
-newPackage = false;
-}
-if (newPackage)
-  pkgs.push(chartid);
-  
-// Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMapIDe1820bf321d);
-})();
-function displayChartMapIDe1820bf321d() {
-  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
-  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
-  window.clearTimeout(window.__gvisLoad);
-  // The timeout is set to 100 because otherwise the container div we are
-  // targeting might not be part of the document yet
-  window.__gvisLoad = setTimeout(function() {
-  var pkgCount = pkgs.length;
-  google.load("visualization", "1", { packages:pkgs, callback: function() {
-  if (pkgCount != pkgs.length) {
-  // Race condition where another setTimeout call snuck in after us; if
-  // that call added a package, we must not shift its callback
-  return;
-}
-while (callbacks.length > 0)
-callbacks.shift()();
-} });
-}, 100);
-}
- 
-// jsFooter
-</script>
- 
-<!-- jsChart -->  
-<script type="text/javascript" src="https://www.google.com/jsapi?callback=displayChartMapIDe1820bf321d"></script>
- 
-<!-- divChart -->
-  
-<div id="MapIDe1820bf321d" 
-  style="width: 500; height: automatic;">
-</div>
+```
+  Station.No Location       Date Hour API Pollutant
+1         41  Banting 2013-08-01    1  66         *
+2         41  Banting 2013-08-01    2  67         *
+3         41  Banting 2013-08-01    3  67         *
+4         41  Banting 2013-08-01    4  67         *
+5         41  Banting 2013-08-01    5  67         *
+6         41  Banting 2013-08-01    6  67         *
+```
 
 
 
